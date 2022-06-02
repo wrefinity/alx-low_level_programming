@@ -1,2 +1,2 @@
- #!/bin/bash
- gcc -s -save-temps $CFILE
+#!/bin/bash
+gcc -S $CFILE
