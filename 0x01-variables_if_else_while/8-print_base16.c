@@ -8,13 +8,13 @@
 int main(void)
 {
 	int x;
-	char leta;
+	char letta;
 
 	for (x = 0; x < 10; x++)
 		putchar((x % 10) + '0');
 
-	for (leta = 'a'; leta <= 'f'; leta++)
-		putchar(leta);
+	for (letta = 'a'; letta <= 'f'; letta++)
+		putchar(letta);
 
 	putchar('\n');
 
