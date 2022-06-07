@@ -8,7 +8,7 @@ int main(void)
 	char c[] = "engineers";
 	int z;
 
-	while(z< 9)
+	while (z < 9)
 	{
 		_putchar(c[z]);
 		z++;
@@ -16,4 +16,3 @@ int main(void)
 	_putchar('\n');
 	return (0);
 }
-
