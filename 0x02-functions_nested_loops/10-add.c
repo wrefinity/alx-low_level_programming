@@ -3,8 +3,8 @@
 
 /**
  * add - This function add two numbers
- * @n: the input
- * @m: the other input
+ * @z: the input
+ * @y: the other input
  * Description: to add two nums
  * Return: the result
  */
