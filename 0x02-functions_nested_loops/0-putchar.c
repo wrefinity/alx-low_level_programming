@@ -8,10 +8,9 @@ int main(void)
 	char c[] = "_putchar";
 	int z;
 
-	while (z < 8)
+	for (z = 0; z < 8; z++)
 	{
 		_putchar(c[z]);
-		z++;
 	}
 	_putchar('\n');
 	return (0);
