@@ -1,14 +1,14 @@
 #include "main.h"
 /**
- * main - prints the string "engineer".
+ * main - prints the string "_putchar".
  * Return: 0 on success.
  */
 int main(void)
 {
-	char c[] = "engineers";
+	char c[] = "_putchar";
 	int z;
 
-	while (z < 9)
+	while (z < 8)
 	{
 		_putchar(c[z]);
 		z++;
