@@ -1,24 +1,22 @@
 #include "main.h"
 /**
- * print_line - check the shortest distance.
- * @n: variable 
+ * print_line - shortest distance.
+ * @n: is the integer for the paramaters of my function
  * Return: 0
  */
 void print_line(int n)
 {
-	int z = 0;
+	int a = 0;
 
 	if (n > 0)
 	{
-		while (z <= n)
+		while (a <= n)
 		{
 			_putchar('_');
-			z++;
+			a++;
 		}
 	 _putchar('\n');
 	}
 	else
-  {
-  _putchar('\n');
-  }
+	_putchar('\n');
 }
