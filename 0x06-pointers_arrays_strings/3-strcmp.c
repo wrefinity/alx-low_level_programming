@@ -1,10 +1,8 @@
-include "main.h"
-
 /**
  * _strcmp - function to compare charcter
  * @s1: first variable to compare
  * @s2: second variable for comparism
- * Return: return (0)
+ * Return: the difference between the first character that are not the same
  */
 
 int _strcmp(char *s1, char *s2)
