@@ -1,13 +1,9 @@
-#include "main.h"
-
 /**
- * _strcat - function to concantenate two string
- * @dest: defines the destination variable
- * @src: the second variable to concantenate
- *
- * Return: return the concatenated string
+ * _strcat - function to concatenates two strings
+ * @dest: destination string
+ * @src: source string
+ * Return: returns the concenated string
  */
-
 
 char *_strcat(char *dest, char *src)
 {
