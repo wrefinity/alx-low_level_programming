@@ -1,37 +1,31 @@
-#include "main.h"
 #include <stdlib.h>
-
+#include "main.h"
 /**
- * str_concat - function to concatenates two strings.
- * @s1: first string to be concatenated upon.
- * @s2: second string to be concatenated to s1.
- *
- * Return: Null if concatenation fails else concatenated strings.
+ * str_concat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * Return: pointer to a new buffer containing s1 and s2
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *concatenated;
-	int i, str_index = 0, len = 0;
+	char *p;
+	int s1count, s2count, sizeBuffer, i;
 
+	/*Check for valid strings*/
 	if (s1 == NULL)
 		s1 = "";
-
 	if (s2 == NULL)
 		s2 = "";
-
-	for (i = 0; s1[i] || s2[i]; i++)
-		len++;
-
-	concatenated = malloc(sizeof(char) * len);
-
-	if (concatenated == NULL)
+	for (s1count = 0; s1[s1count]; s1count++)
+		;
+	for (s2count = 0; s2[s2count]; s2count++)
+		;
+	sizeBuffer = s1count + s2count + 1;
+	p = malloc(sizeBuffer * sizeof(char));
+	if (p == NULL)
 		return (NULL);
-
-	for (i = 0; s1[i]; i++)
-		concatenated[str_index++] = s1[i];
-
-	for (index = 0; s2[index]; index++)
-		concatenated[str_index++] = s2[i];
-
-	return (concatenated);
+	for (i = 0; i < sizeBuffer; i++)
+		i < s1count ? (p[i] = s1[i]) : (p[i] = s2[i - s1count]);
+	return (p);
 }
+
