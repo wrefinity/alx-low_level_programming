@@ -2,42 +2,42 @@
 #include <stdlib.h>
 
 /**
- * argstostr - function to Concatenates all arguments;
- * @ac: number of arguments passed to the program.
- * @av: defines an array of pointers to the arguments.
+ * argstostr - concatenates all the arguments.
+ * @ac: The number of arguments passed to the program.
+ * @av: An array of pointers to the arguments.
  *
- * Return: if ac == 0, av == NULL else new string pointer.
+ * Return: Null or a pointer to the new string.
  */
 char *argstostr(int ac, char **av)
 {
-	char *str;
-	int arg, byte, i, arg_size = ac;
+	int j, i, arg, size = ac;
+	char *concatenated;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-
-	for (arg = 0; arg < ac; arg++)
+		
+	for (j = 0; j < ac; j++)
 	{
-		for (byte = 0; av[arg][byte]; byte++)
-			arg_size++;
+		for (arg = 0; av[j][arg]; arg++)
+			size++;
 	}
 
-	str = malloc(arg_sizeof(char) * arg_size + 1);
+	concatenated = malloc(sizeof(char) * size + 1);
 
-	if (str == NULL)
+	if (concatenated == NULL)
 		return (NULL);
 
 	i = 0;
 
-	for (arg = 0; arg < ac; arg++)
+	for (j = 0; j < ac; j++)
 	{
-		for (byte = 0; av[arg][byte]; byte++)
-			str[i++] = av[arg][byte];
+		for (arg = 0; av[j][arg]; arg++)
+			concatenated[i++] = av[j][arg];
 
-		str[i++] = '\n';
+		concatenated[i++] = '\n';
 	}
 
-	str[arg_size] = '\0';
+	concatenated[size] = '\0';
 
-	return (str);
+	return (concatenated);
 }
