@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _calloc - allocates memory for an array 
+ * _calloc - allocates memory for an array
  * @nmemb: The number of elements.
  * @size: The byte size of each array element.
  *
@@ -10,22 +10,22 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *alloc;
-	char *ptrr;
-	unsigned int i;
+        void *alloc;
+        char *ptrr;
+        unsigned int i;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
+        if (nmemb == 0 || size == 0)
+                return (NULL);
 
-	alloc = malloc(size * nmemb);
+        alloc = malloc(size * nmemb);
 
-	if (alloc == NULL)
-		return (NULL);
+        if (alloc == NULL)
+                return (NULL);
 
-	ptrr = alloc;
+        ptrr = alloc;
 
-	for (i = 0; i < (size * nmemb); i++)
-		ptrr[i] = '\0';
+        for (i = 0; i < (size * nmemb); i++)
+                ptrr[i] = '\0';
 
-	return (alloc);
-}
+        return (alloc);
+}                                                                                                                                                  5,42          A
