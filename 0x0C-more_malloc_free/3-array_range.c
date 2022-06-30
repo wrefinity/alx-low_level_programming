@@ -9,16 +9,20 @@
   */
 int *array_range(int min, int max)
 {
-	int *tr;
-	int dim, i;
+	int *array, index, size;
 
 	if (min > max)
 		return (NULL);
-	dim = max - min + 1;
-	ptr = malloc(dim * sizeof(*p));
-	if (ptr == NULL)
+
+	size = max - min + 1;
+
+	array = malloc(sizeof(int) * size);
+
+	if (array == NULL)
 		return (NULL);
-	for (i = 0; i < dim; min++, i++)
-		ptr[i] = min;
-	return (ptr);
+
+	for (index = 0; index < size; index++)
+		array[index] = min++;
+
+	return (array);
 }
