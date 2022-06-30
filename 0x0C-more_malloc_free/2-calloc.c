@@ -28,4 +28,4 @@ void *_calloc(unsigned int nmemb, unsigned int size)
                 ptrr[i] = '\0';
 
         return (alloc);
-}                                                                                                                                                  5,42          A
+}
