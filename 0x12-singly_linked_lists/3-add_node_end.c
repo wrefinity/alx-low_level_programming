@@ -1,7 +1,9 @@
 #include "lists.h"
 #include <string.h>
+
+
 /**
-  * add_node_end - add new nodes to the end of the list
+  * add_node_end - add new nodes to the end
   * @head: current place in the list
   * @str: string to add to the head
   * Return: pointer to current position in list
