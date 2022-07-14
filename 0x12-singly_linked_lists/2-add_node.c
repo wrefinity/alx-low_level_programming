@@ -1,18 +1,5 @@
 #include "lists.h"
-#include <stdlib.h>
-/**
-  * _strlen - gets String length
-  * @s: string
-  * Return: length of the string
-  */
-int _strlen(const char *s)
-{
-	int x;
-
-	for (x = 0; s[x]; x++)
-		;
-	return (x);
-}
+#include <string.h>
 /**
   * add_node - add new nodes to the list
   * @head: current place in the list
@@ -21,29 +8,30 @@ int _strlen(const char *s)
   */
 list_t *add_node(list_t **head, const char *str)
 {
-	int i, l;
-	char *element;
 	list_t *new;
+	char *dup;
+	int len;
 
-	if (str == NULL || head == NULL)
-		return (NULL);
-	l = _strlen(str);
-	new = *head;
-	element = malloc((l + 1) * sizeof(char));
-	if (element == NULL)
-		return (NULL);
-	for (i = 0; str[i]; i++)
-		element[i] = str[i];
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
+		return (NULL);
+
+	dup = strdup(str);
+	if (dup == NULL)
 	{
-		free(element);
+		free(new);
 		return (NULL);
 	}
-	new->str = element;
-	new->l = l;
+
+	for (len = 0; str[len];)
+		len++;
+
+	new->str = dup;
+	new->len = len;
 	new->next = *head;
+
 	*head = new;
+
 	return (new);
 }
 
