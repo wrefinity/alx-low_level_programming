@@ -9,14 +9,14 @@
  */
 int _strlen(const char *s)
 {
-	int x;
+	int i;
 
-	for (x = 0; s[x]; x++)
+	for (i = 0; s[i]; i++)
 		;
-	return (x);
+	return (i);
 }
 /**
- * _strdup - recreates string
+ * _strdup - recreation of string duplicate function
  * @src: source of string to duplicate
  * Return: pointer to malloc'd space with copied string
  */
@@ -35,7 +35,7 @@ void *_strdup(const char *src)
 	return (dest);
 }
 /**
- * add_node_end - add new nodes to the list end
+ * add_node_end - add new nodes to the end of the list
  * @head: current place in the list
  * @str: string to add to the head
  * Return: pointer to current position in list
