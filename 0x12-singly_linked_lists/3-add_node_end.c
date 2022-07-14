@@ -1,48 +1,69 @@
 #include "lists.h"
-#include <string.h>
-
-
+#include <stdlib.h>
+#include <stdio.h>
+#include <stddef.h>
 /**
-  * add_node_end - add new nodes to the end
-  * @head: current place in the list
-  * @str: string to add to the head
-  * Return: pointer to current position in list
-  */
+ * _strlen - gets length of the string
+ * @s: string
+ * Return: length of the string
+ */
+int _strlen(const char *s)
+{
+	int x;
+
+	for (x = 0; s[x]; x++)
+		;
+	return (x);
+}
+/**
+ * _strdup - recreates string
+ * @src: source of string to duplicate
+ * Return: pointer to malloc'd space with copied string
+ */
+void *_strdup(const char *src)
+{
+	int len, i;
+	char *dest;
+
+	len = _strlen(src);
+	dest = malloc((len + 1) * sizeof(char));
+	if (dest == NULL)
+		return (NULL);
+	for (i = 0; src[i]; i++)
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
+}
+/**
+ * add_node_end - add new nodes to the list end
+ * @head: current place in the list
+ * @str: string to add to the head
+ * Return: pointer to current position in list
+ */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	char *dup;
-	int len;
-	list_t *new, *last;
+	list_t *new, *current;
+	char *dupstr;
 
+	if (str == NULL)
+		return (NULL);
+	dupstr = _strdup(str);
+	if (dupstr == NULL)
+		return (NULL);
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
 		return (NULL);
-
-	dup = strdup(str);
-	if (str == NULL)
-	{
-		free(new);
-		return (NULL);
-	}
-
-	for (len = 0; str[len];)
-		len++;
-
-	new->str = dup;
-	new->len = len;
+	new->str = dupstr;
+	new->len = _strlen(str);
 	new->next = NULL;
-
 	if (*head == NULL)
-		*head = new;
-
-	else
 	{
-		last = *head;
-		while (last->next != NULL)
-			last = last->next;
-		last->next = new;
+		*head = new;
+		return (*head);
 	}
-
+	current = *head;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new;
 	return (*head);
 }
-
