@@ -1,5 +1,11 @@
-#ifndef _LISTS.H_
-#define _LISTS.H_
+#ifndef LISTS_H
+#define LISTS_H
+
+/*
+ * Desc: Header file containing prototypes and definitions for all functions
+ *       and types written in the 0x12-more_singly_linked_lists directory.
+ */
+
 
 /**
  * struct listint_s - singly linked list
