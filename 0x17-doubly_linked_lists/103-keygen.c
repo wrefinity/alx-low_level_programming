@@ -3,12 +3,12 @@
 #include <time.h>
 
 /**
- * function1 - get the 2 char of keygen
+ * func_one - get the 2 char of keygen
  * @a: size of user
  * @b: array of arguments
  * Return: the position of posvalues
  */
-int function1(int a, char *b[])
+int func_one(int a, char *b[])
 {
 	int count = 0, car = 0, value;
 
@@ -18,12 +18,12 @@ int function1(int a, char *b[])
 	return (value);
 }
 /**
- * function2 - get the thirdth char of keygen
+ * func_two - get the thirdth char of keygen
  * @a: size of user
  * @b: array of arguments
  * Return: the position of posvalues
  */
-int function2(int a, char *b[])
+int func_two(int a, char *b[])
 {
 	int count = 0, car = 1, value;
 
@@ -33,11 +33,11 @@ int function2(int a, char *b[])
 	return (value);
 }
 /**
- * function3 - get the 4th char of keygen
+ * func_three - get the 4th char of keygen
  * @b: array of arguments
  * Return: the position of posvalues
  */
-int function3(char *b[])
+int func_three(char *b[])
 {
 	int value, car = 0, count = 0;
 
@@ -51,11 +51,11 @@ int function3(char *b[])
 	return (value);
 }
 /**
- * function4 - get the 4th char of keygen
+ * func_four - get the 4th char of keygen
  * @b: size of user
  * Return: the position of posvalues
  */
-int function4(char *b[])
+int func_four(char *b[])
 {
 	int value, car = 0, count = 0;
 
@@ -72,7 +72,7 @@ int function4(char *b[])
  */
 int main(int argc, char *argv[])
 {
-	char posvalues[] =
+	char crack_code[] =
 		"A-CHRDw87lNS0E9B2TibgpnMVys5Xzvt0GJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 	char key[7];
 	int i = 0, car = 0, value;
@@ -83,17 +83,17 @@ int main(int argc, char *argv[])
 		{
 			i++;
 		}
-		key[0] = posvalues[(i ^ 59) & 63];
-		key[1] = posvalues[function1(i, argv)];
-		key[2] = posvalues[function2(i, argv)];
-		key[3] = posvalues[function3(argv)];
-		key[4] = posvalues[function4(argv)];
+		key[0] = crack_code[(i ^ 59) & 63];
+		key[1] = crack_code[func_one(i, argv)];
+		key[2] = crack_code[func_two(i, argv)];
+		key[3] = crack_code[func_three(argv)];
+		key[4] = crack_code[func_four(argv)];
 		for (; car < argv[1][0]; car++)
 		{
 			value = rand();
 		}
 		value = (value ^ 229) & 63;
-		key[5] = posvalues[value];
+		key[5] = crack_code[value];
 		for (i = 0; i < 6; i++)
 			printf("%c", key[i]);
 	}
