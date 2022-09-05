@@ -22,3 +22,25 @@ int add(int x, int y)
 {
 	return (x + y);
 }
+
+/**
+ * sub - to sub
+ * @x: variable
+ * @y: variable
+ * Return: sub
+ */
+int sub(int x, int y)
+{
+	return (x - y);
+}
+
+/**
+ * mul - to mul
+ * @x: variable
+ * @y: variable
+ * Return:  mul
+ */
+int mul(int x, int y)
+{
+	return (x * y);
+}
