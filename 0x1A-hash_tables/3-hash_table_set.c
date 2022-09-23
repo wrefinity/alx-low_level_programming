@@ -30,6 +30,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = strdup(key);
 	node->value = strdup(value);
 	node->next = ht->array[position];
-	ht->array[position] = new_node;
+	ht->array[position] = node;
 	return (1);
 }
