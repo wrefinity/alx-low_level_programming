@@ -1,0 +1,3 @@
+# automate c program files compilations
+all: main.c school.c message.h
+	gcc main.c school.c -o school
