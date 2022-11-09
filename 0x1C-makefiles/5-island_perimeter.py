@@ -4,17 +4,17 @@
 
 def island_perimeter(grid):
     """ return the perimeter of an island """
-    perim = 0
-    gd = []
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            gd.append(grid[i][j])
-    for i in range(len(gd)):
-        if i < len(gd) - 1 and i > 0:
-            if gd[i] == 0 and gd[i + 1] == 1 or gd[i] == 0 and gd[i - 1] == 1:
-                perim += 1
-    if perim % 2 == 0:
-        perim *= 2
-    else:
-        perim = (perim * 2) - 1
-    return perim
+    width = len(grid[0])
+    height = len(grid)
+    edges = 0
+    size = 0
+
+    for col in range(height):
+        for row in range(width):
+            if grid[col][row] == 1:
+                size += 1
+                if (row > 0 and grid[col][row - 1] == 1):
+                    edges += 1
+                if (col > 0 and grid[col - 1][row] == 1):
+                    edges += 1
+    return size * 4 - edges * 2
